@@ -1,27 +1,71 @@
 ---
-import TitleLayout from "../layouts/Title.astro";
-import SidebarLayout from "../layouts/Sidebar.astro";
+import TitleLayout from "@layouts/Title.astro";
+import SidebarLayout from "@layouts/Sidebar.astro";
+import CardsContainer from "@components/cards/CardsContainer.astro";
+import Card from "@components/cards/Card.astro";
+import weatherAppImg from "@assets/images/weather-app.png";
+import shoppingifyImg from "@assets/images/shoppingify.png";
+import myUnsplashImg from "@assets/images/my-unsplash.png";
 ---
 
 <TitleLayout title="Ibrahim's Personal Website">
   <SidebarLayout>
-    <div class="">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum nihil, dolores natus voluptatem totam ad labore
-      provident sequi eaque? Dolore provident eveniet perferendis beatae possimus quidem quae tempora ullam eaque.
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, laborum dolorem. Cumque repellat sequi nisi
-      facilis consequuntur reiciendis? Natus earum, impedit assumenda commodi voluptates unde. Cum eos veritatis quidem
-      quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, corporis ex deleniti, iste ullam,
-      blanditiis quo perferendis voluptates tempora incidunt consectetur sit impedit praesentium mollitia soluta? Quia
-      sunt delectus eum!
-    </div>
+    <section>
+      <h3 class="text-2xl font-medium text-slate-800">Hey there 👋</h3>
+      <h1 class="mt-1 mb-2 text-6xl font-extrabold text-slate-800">I'm Ibrahim</h1>
+      <h2 class="text-4xl font-bold text-slate-800">Full Stack Developer</h2>
+      <p class="mt-5 text-xl text-gray-800">
+        Hey, I'm Ibrahim, a graduate in computer science and a full-stack web developer with a passion for building
+        modern, scalable, and reliable applications 🚀. I have experience working with a range of technologies including
+        TypeScript 💎, Express 🇪, React ⚛️, NextJS 🅝, Tailwind 💨, Prisma ▲ and databases like Postgres 🐘 and MongoDB
+        🍃.
+      </p>
+      <p class="mt-5 text-xl text-gray-800">
+        In addition to these technologies, I am also familiar with a range of other tools and frameworks, including Git,
+        Linux 🐧, and Docker 🐋. I am always looking to learn and improve my skills 📚, and I am excited to take on new
+        challenges and opportunities 💪.
+      </p>
+
+      <a href="https://www.example.com">
+        <button
+          class="py-4 px-6 my-12 text-xl font-bold bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-900 duration-150"
+          >Let's connect 🤝</button
+        >
+      </a>
+    </section>
+    <section>
+      <CardsContainer title="My latest projects </>">
+        <Card
+          title="Weather app"
+          link=""
+          image={weatherAppImg}
+          description={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita temporibus repudiandae delectus " +
+            "laboriosam consequatur tempora harum ut, hic nihil excepturi quae placeat, ratione a deserunt officia explicabo id laborum rem!"}
+        />
+        <Card
+          title="Shoppingify"
+          link=""
+          image={shoppingifyImg}
+          description={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita temporibus repudiandae delectus " +
+            "laboriosam consequatur tempora harum ut, hic nihil excepturi quae placeat, ratione a deserunt officia explicabo id laborum rem!"}
+        />
+        <Card
+          title="My unsplash"
+          link=""
+          image={myUnsplashImg}
+          description={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita temporibus repudiandae delectus " +
+            "laboriosam consequatur tempora harum ut, hic nihil excepturi quae placeat, ratione a deserunt officia explicabo id laborum rem!"}
+        />
+      </CardsContainer>
+    </section>
   </SidebarLayout>
 </TitleLayout>
 <style is:global>
   :root {
   }
   html {
-    font-size: 15px;
-    font-family: Helvetica, sans-serif;
+    font-size: 17px;
+    font-family: ui-sans-serif, system-ui, Helvetica, sans-serif;
     background-color: white;
   }
   code {
