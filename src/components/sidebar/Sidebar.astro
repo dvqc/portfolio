@@ -1,19 +1,30 @@
 ---
 import portrait from "@assets/portrait.jpg";
+import Nav from "./Nav.astro";
+import NavItem from "./NavItem.astro";
+import githubIcon from "@assets/icons/github.svg";
+import twitterIcon from "@assets/icons/twitter.svg";
+import linkedinIcon from "@assets/icons/linkedin.svg";
+import Links from "./Links.astro";
+import LinkItem from "./LinkItem.astro";
+interface Props {
+  className: string;
+}
+const { className = "" } = Astro.props;
 ---
 
-<navbar class="fixed left-0 top-0 h-screen w-96 p-5 bg-gray-200">
-  <img src={portrait} alt="A portrait image of the website owner" />
-  <ul>
-    <li>Home</li>
-    <li>Projects</li>
-    <li>Services</li>
-    <li>About</li>
-    <li>Contact</li>
-  </ul>
-  <div>
-    <a href="">github</a>
-    <a href="">twitter</a>
-    <a href="">linkedin</a>
-  </div>
-</navbar>
+<aside class={className + " fixed flex flex-col items-center left-0 top-0 h-screen overflow-auto p-5 bg-gray-200"}>
+  <img class="w-56 h-56 rounded-full m-5 shadow-md" src={portrait} alt="A portrait image of the website owner" />
+  <Nav>
+    <NavItem text="Home" link="#Home" />
+    <NavItem text="Projects" link="#Projects" />
+    <NavItem text="Services" link="#Services" />
+    <NavItem text="About" link="#About" />
+    <NavItem text="Contact" link="#Contact" />
+  </Nav>
+  <Links>
+    <LinkItem icon={githubIcon} link="https://github.com/dvqc" />
+    <LinkItem icon={twitterIcon} link="https://twitter.com/Ibrahim_devx" />
+    <LinkItem icon={linkedinIcon} link="https://www.linkedin.com/in/ibrahim-benfares-5590a0225/" />
+  </Links>
+</aside>
