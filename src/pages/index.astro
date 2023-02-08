@@ -6,6 +6,7 @@ import Card from "@components/cards/Card.astro";
 import weatherAppImg from "@assets/images/weather-app.png";
 import shoppingifyImg from "@assets/images/shoppingify.png";
 import myUnsplashImg from "@assets/images/my-unsplash.png";
+import Badge from "@components/Badge.astro";
 ---
 
 <TitleLayout title="Ibrahim's Personal Website">
@@ -15,10 +16,9 @@ import myUnsplashImg from "@assets/images/my-unsplash.png";
       <h1 class="mt-1 mb-2 text-6xl font-extrabold text-slate-800">I'm Ibrahim</h1>
       <h2 class="text-4xl font-bold text-slate-800">Full Stack Developer</h2>
       <p class="mt-5 text-xl text-gray-800">
-        Hey, I'm Ibrahim, a graduate in computer science and a full-stack web developer with a passion for building
-        modern, scalable, and reliable applications 🚀. I have experience working with a range of technologies including
-        TypeScript 💎, Express 🇪, React ⚛️, NextJS 🅝, Tailwind 💨, Prisma ▲ and databases like Postgres 🐘 and MongoDB
-        🍃.
+        I'm a graduate in computer science and a full-stack web developer with a passion for building modern, scalable,
+        and reliable applications 🚀. I have experience working with a range of technologies including TypeScript 💎,
+        Express 🇪, React ⚛️, NextJS 🅝, Tailwind 💨, Prisma ▲ and databases like Postgres 🐘 and MongoDB 🍃.
       </p>
       <p class="mt-5 text-xl text-gray-800">
         In addition to these technologies, I am also familiar with a range of other tools and frameworks, including Git,
@@ -35,27 +35,28 @@ import myUnsplashImg from "@assets/images/my-unsplash.png";
     </section>
     <section>
       <CardsContainer title="My latest projects </>">
-        <Card
-          title="Weather app"
-          link=""
-          image={weatherAppImg}
-          description={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita temporibus repudiandae delectus " +
-            "laboriosam consequatur tempora harum ut, hic nihil excepturi quae placeat, ratione a deserunt officia explicabo id laborum rem!"}
-        />
-        <Card
-          title="Shoppingify"
-          link=""
-          image={shoppingifyImg}
-          description={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita temporibus repudiandae delectus " +
-            "laboriosam consequatur tempora harum ut, hic nihil excepturi quae placeat, ratione a deserunt officia explicabo id laborum rem!"}
-        />
-        <Card
-          title="My unsplash"
-          link=""
-          image={myUnsplashImg}
-          description={"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita temporibus repudiandae delectus " +
-            "laboriosam consequatur tempora harum ut, hic nihil excepturi quae placeat, ratione a deserunt officia explicabo id laborum rem!"}
-        />
+        <Card title="Weather app" link="https://weather-app-dvqc.vercel.app/" image={weatherAppImg}>
+          This is a simple weather app that uses an external API (<a
+            class="text-blue-400 hover:underline"
+            href="https://www.weatherapi.com/"
+            target="_blank">WeatherAPI</a
+          >) and renders weather data based on the user's or the requested location.
+          <div slot="stack">
+            <Badge className="" text="React" />
+            <Badge className="bg-gray-800" text="Next" />
+            <Badge className="bg-pink-900" text="SCSS" />
+          </div>
+        </Card>
+        <Card title="Shoppingify" link="https://shoppingify-dvqc.vercel.app/" image={shoppingifyImg}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A explicabo ratione, debitis repudiandae reiciendis
+          eum nesciunt laudantium fugiat id quo dolores impedit atque velit praesentium officia optio, culpa repellat
+          porro!
+        </Card>
+        <Card title="My unsplash" link="https://my-unsplash-umber.vercel.app/" image={myUnsplashImg}>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint porro laudantium aliquid totam ullam,
+          repudiandae sit aperiam iure accusamus tempore est provident aspernatur quod? Iusto rem nam officia totam
+          sequi.
+        </Card>
       </CardsContainer>
     </section>
   </SidebarLayout>
@@ -72,4 +73,8 @@ import myUnsplashImg from "@assets/images/my-unsplash.png";
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
       monospace;
   }
+
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
 </style>
