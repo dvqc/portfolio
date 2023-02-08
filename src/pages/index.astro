@@ -7,6 +7,11 @@ import weatherAppImg from "@assets/images/weather-app.png";
 import shoppingifyImg from "@assets/images/shoppingify.png";
 import myUnsplashImg from "@assets/images/my-unsplash.png";
 import Badge from "@components/Badge.astro";
+import LinkCard from "@components/cards/LinkCard.astro";
+import languagesImg from "@assets/images/web_languages.jpg";
+import frameworksImg from "@assets/images/frameworks.jpg";
+import toolsImg from "@assets/images/tools.png";
+import fullStackImg from "@assets/images/fullstack.png";
 ---
 
 <TitleLayout title="Ibrahim's Personal Website">
@@ -17,13 +22,12 @@ import Badge from "@components/Badge.astro";
       <h2 class="text-4xl font-bold text-slate-800">Full Stack Developer</h2>
       <p class="mt-5 text-xl text-gray-800">
         I'm a graduate in computer science and a full-stack web developer with a passion for building modern, scalable,
-        and reliable applications 🚀. I have experience working with a range of technologies including TypeScript 💎,
-        Express 🇪, React ⚛️, NextJS 🅝, Tailwind 💨, Prisma ▲ and databases like Postgres 🐘 and MongoDB 🍃.
+        and reliable applications 🚀. I have experience working with a range of technologies including but not limited
+        to: TypeScript 💎, NextJS 🅝, Tailwind 💨, Prisma ▲ and databases like Postgres 🐘 and MongoDB 🍃.
       </p>
       <p class="mt-5 text-xl text-gray-800">
-        In addition to these technologies, I am also familiar with a range of other tools and frameworks, including Git,
-        Linux 🐧, and Docker 🐋. I am always looking to learn and improve my skills 📚, and I am excited to take on new
-        challenges and opportunities 💪.
+        I am always looking to learn and improve my skills 📚, and I am excited to take on new challenges and
+        opportunities 💪.
       </p>
 
       <a href="https://www.example.com">
@@ -33,35 +37,83 @@ import Badge from "@components/Badge.astro";
         >
       </a>
     </section>
-    <section>
-      <CardsContainer title="My latest projects </>">
-        <Card title="Weather app" link="https://weather-app-dvqc.vercel.app/" image={weatherAppImg}>
-          This is a simple weather app that uses an external API (<a
-            class="text-blue-400 hover:underline"
-            href="https://www.weatherapi.com/"
-            target="_blank">WeatherAPI</a
-          >) and renders weather data based on the user's or the requested location.
-          <div slot="stack">
-            <Badge className="" text="React" />
-            <Badge className="bg-gray-800" text="Next" />
-            <Badge className="bg-pink-900" text="SCSS" />
-          </div>
-        </Card>
-        <Card title="Shoppingify" link="https://shoppingify-dvqc.vercel.app/" image={shoppingifyImg}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. A explicabo ratione, debitis repudiandae reiciendis
-          eum nesciunt laudantium fugiat id quo dolores impedit atque velit praesentium officia optio, culpa repellat
-          porro!
-        </Card>
-        <Card title="My unsplash" link="https://my-unsplash-umber.vercel.app/" image={myUnsplashImg}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint porro laudantium aliquid totam ullam,
-          repudiandae sit aperiam iure accusamus tempore est provident aspernatur quod? Iusto rem nam officia totam
-          sequi.
-        </Card>
-      </CardsContainer>
-    </section>
+    <CardsContainer title="My latest projects 🏗️">
+      <LinkCard title="Weather app" link="https://weather-app-dvqc.vercel.app/" image={weatherAppImg}>
+        This is a simple weather web app that uses an external API (<a
+          class="text-blue-400 hover:underline"
+          href="https://www.weatherapi.com/"
+          target="_blank">WeatherAPI</a
+        >) and renders weather data based on the user's geolocation.
+        <div slot="stack">
+          <Badge className="bg-blue-500" text="TypeScript" />
+          <Badge className="bg-pink-600" text="SCSS" />
+          <Badge className="bg-cyan-400" text="React" />
+          <Badge className="bg-gray-800" text="Next" />
+        </div>
+      </LinkCard>
+      <LinkCard title="Shoppingify" link="https://shoppingify-dvqc.vercel.app/" image={shoppingifyImg}>
+        Shoppingify is a full stack responsive web app that lets users browse or add items and create a shopping list
+        that they can take wherever they go.
+        <div slot="stack">
+          <Badge className="bg-blue-500" text="TypeScript" />
+          <Badge className="bg-cyan-500" text="TailwindCSS" />
+          <Badge className="bg-cyan-400" text="React" />
+          <Badge className="bg-gray-800" text="Next" />
+        </div>
+      </LinkCard>
+      <LinkCard title="My unsplash" link="https://my-unsplash-umber.vercel.app/" image={myUnsplashImg}>
+        This is an <a class="text-blue-400 hover:underline" href="https://unsplash.com/" target="_blank">Unsplash</a> mini
+        clone, users can browse, add, manage and like images, with the most popular ones ranked first.
+        <div slot="stack">
+          <Badge className="bg-blue-500" text="TypeScript" />
+          <Badge className="bg-pink-600" text="SCSS" />
+          <Badge className="bg-cyan-400" text="React" />
+          <Badge className="bg-gray-800" text="Next" />
+        </div>
+      </LinkCard>
+    </CardsContainer>
+    <CardsContainer title="My skills 💡">
+      <Card title="Languages" image={languagesImg}>
+        I have a solid expertise in using basic web technologies, including HTML, CSS, JavaScript, as well as other
+        significant languages such as TypeScript, SCSS, and SQL.
+      </Card>
+      <Card title="Frameworks and libraries" image={frameworksImg}>
+        With a good all-around experience in full stack development and multiple completed projects, I have gained a
+        strong understanding of libraries like React, Tailwind, and Prisma, as well as frameworks like Next and Express.
+      </Card>
+      <Card title="Other tools" image={toolsImg}>
+        Furthermore, I possess practical experience with PostgreSQL and MongoDB. And I am well-versed in tools such as
+        Git, Linux, and Docker.
+      </Card>
+    </CardsContainer>
+    <CardsContainer title="My services 💁">
+      <Card title="Full Stack Development" image={fullStackImg}>
+        I offer comprehensive full stack development services to bring your web application ideas to life. With
+        expertise in both frontend and backend technologies, I can create a seamless and robust solution that meets your
+        requirements.
+      </Card>
+      <Card title="Frontend Development">
+        I can design and build visually appealing and user-friendly apps that provide an engaging and seamless user
+        experience. Whether you need a single-page app or a complex web application, I have the skills and experience to
+        deliver.
+      </Card>
+      <Card title="Static Sites">
+        If you're looking for a simple and cost-effective way to showcase your business or personal brand online, I can
+        create a stunning and professional-looking static site for you. These sites are easy to maintain, fast to load,
+        and accessible to all.
+      </Card>
+      <Card title="REST APIs">
+        If you need to connect different applications or expose your data to your frontend applications, I can help you
+        by designing and building your REST API using standard guidlines and modern technologies.
+      </Card>
+    </CardsContainer>
   </SidebarLayout>
 </TitleLayout>
 <style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
   :root {
   }
   html {
@@ -69,12 +121,10 @@ import Badge from "@components/Badge.astro";
     font-family: ui-sans-serif, system-ui, Helvetica, sans-serif;
     background-color: white;
   }
-  code {
-    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
-      monospace;
-  }
 
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+  @layer {
+    section {
+      @apply my-24;
+    }
+  }
 </style>

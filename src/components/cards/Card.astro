@@ -1,28 +1,24 @@
 ---
 interface Props {
   title: string;
-  link: string;
   image?: string;
   alt?: string;
 }
 import placeholder from "@assets/images/placeholder.png";
 const {
   title,
-  link,
   image = placeholder,
   alt = "A card component image probably related to a project or a blog"
 } = Astro.props;
 ---
 
-<a href={link} target="_blank">
-  <div
-    class="flex items-center gap-5 p-5 text-slate-800 bg-white rounded-xl cursor-pointer duration-100 hover:shadow-xl hover:scale-102"
-  >
-    <img class="min-w-72 h-40 rounded-xl object-cover" src={image} alt={alt} />
-    <article class="">
-      <h3 class="text-2xl font-bold">{title} <slot name="badge" /></h3>
-      <p class="my-2 text-lg"><slot /></p>
-      <slot name="stack" />
-    </article>
-  </div>
-</a>
+<div
+  class="flex items-center gap-5 p-5 text-slate-800 bg-white rounded-xl duration-150 hover:shadow-xl hover:scale-102"
+>
+  <img class="min-w-72 h-64 rounded-xl object-contain" src={image} alt={alt} />
+  <article class="">
+    <h3 class="text-2xl font-bold">{title} <slot name="badge" /></h3>
+    <p class="my-2 text-lg"><slot /></p>
+    <slot name="stack" />
+  </article>
+</div>
