@@ -8,8 +8,15 @@ const { action } = Astro.props;
 
 <div class="flex mt-6">
   <form target="_blank" action={action} method="POST" class="w-full grid grid-cols-2 gap-5 px-8 py-4">
-    <input class="input-light" type="text" name="name" class="form-control" placeholder="Full Name" required />
-    <input class="input-light" type="email" name="email" class="form-control" placeholder="Email Address" required />
+    <input class="input-light dark" type="text" name="name" class="form-control" placeholder="Full Name" required />
+    <input
+      class="input-light dark"
+      type="email"
+      name="email"
+      class="form-control"
+      placeholder="Email Address"
+      required
+    />
     <textarea
       class="col-span-2 input-light resize-none"
       placeholder="Your Message"
