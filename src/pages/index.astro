@@ -11,12 +11,17 @@ import LinkCard from "@components/cards/LinkCard.astro";
 import languagesImg from "@assets/images/web_languages.jpg";
 import frameworksImg from "@assets/images/frameworks.jpg";
 import toolsImg from "@assets/images/tools.png";
-import fullStackImg from "@assets/images/fullstack.png";
+import fullStackImg from "@assets/images/fullstack.svg";
+import frontendImg from "@assets/images/frontend.svg";
+import staticImg from "@assets/images/static.svg";
+import educationImg from "@assets/images/education.svg";
+import jobImg from "@assets/images/job.svg";
+import ContactForm from "@components/ContactForm.astro";
 ---
 
 <TitleLayout title="Ibrahim's Personal Website">
   <SidebarLayout>
-    <section>
+    <section id="home">
       <h3 class="text-2xl font-medium text-slate-800">Hey there 👋</h3>
       <h1 class="mt-1 mb-2 text-6xl font-extrabold text-slate-800">I'm Ibrahim</h1>
       <h2 class="text-4xl font-bold text-slate-800">Full Stack Developer</h2>
@@ -31,13 +36,10 @@ import fullStackImg from "@assets/images/fullstack.png";
       </p>
 
       <a href="https://www.example.com">
-        <button
-          class="py-4 px-6 my-12 text-xl font-bold bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-900 duration-150"
-          >Let's connect 🤝</button
-        >
+        <button class="btn-light">Let's connect 🤝</button>
       </a>
     </section>
-    <CardsContainer title="My latest projects 🏗️">
+    <CardsContainer id="projects" title="My latest projects 🏗️">
       <LinkCard title="Weather app" link="https://weather-app-dvqc.vercel.app/" image={weatherAppImg}>
         This is a simple weather web app that uses an external API (<a
           class="text-blue-400 hover:underline"
@@ -48,7 +50,7 @@ import fullStackImg from "@assets/images/fullstack.png";
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-pink-600" text="SCSS" />
           <Badge className="bg-cyan-400" text="React" />
-          <Badge className="bg-gray-800" text="Next" />
+          <Badge className="bg-gray-900" text="Next" />
         </div>
       </LinkCard>
       <LinkCard title="Shoppingify" link="https://shoppingify-dvqc.vercel.app/" image={shoppingifyImg}>
@@ -58,7 +60,7 @@ import fullStackImg from "@assets/images/fullstack.png";
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-cyan-500" text="TailwindCSS" />
           <Badge className="bg-cyan-400" text="React" />
-          <Badge className="bg-gray-800" text="Next" />
+          <Badge className="bg-gray-900" text="Next" />
         </div>
       </LinkCard>
       <LinkCard title="My unsplash" link="https://my-unsplash-umber.vercel.app/" image={myUnsplashImg}>
@@ -68,11 +70,11 @@ import fullStackImg from "@assets/images/fullstack.png";
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-pink-600" text="SCSS" />
           <Badge className="bg-cyan-400" text="React" />
-          <Badge className="bg-gray-800" text="Next" />
+          <Badge className="bg-gray-900" text="Next" />
         </div>
       </LinkCard>
     </CardsContainer>
-    <CardsContainer title="My skills 💡">
+    <CardsContainer id="skills" title="My skills 💡">
       <Card title="Languages" image={languagesImg}>
         I have a solid expertise in using basic web technologies, including HTML, CSS, JavaScript, as well as other
         significant languages such as TypeScript, SCSS, and SQL.
@@ -82,31 +84,42 @@ import fullStackImg from "@assets/images/fullstack.png";
         strong understanding of libraries like React, Tailwind, and Prisma, as well as frameworks like Next and Express.
       </Card>
       <Card title="Other tools" image={toolsImg}>
-        Furthermore, I possess practical experience with PostgreSQL and MongoDB. And I am well-versed in tools such as
-        Git, Linux, and Docker.
+        I possess practical experience with PostgreSQL and MongoDB. And I am well-versed in tools such as Git, Linux,
+        and Docker.
       </Card>
     </CardsContainer>
-    <CardsContainer title="My services 💁">
+    <CardsContainer id="services" title="My services 💁">
       <Card title="Full Stack Development" image={fullStackImg}>
         I offer comprehensive full stack development services to bring your web application ideas to life. With
         expertise in both frontend and backend technologies, I can create a seamless and robust solution that meets your
         requirements.
       </Card>
-      <Card title="Frontend Development">
+      <Card title="Frontend Development" image={frontendImg}>
         I can design and build visually appealing and user-friendly apps that provide an engaging and seamless user
         experience. Whether you need a single-page app or a complex web application, I have the skills and experience to
         deliver.
       </Card>
-      <Card title="Static Sites">
+      <Card title="Static Sites" image={staticImg}>
         If you're looking for a simple and cost-effective way to showcase your business or personal brand online, I can
         create a stunning and professional-looking static site for you. These sites are easy to maintain, fast to load,
         and accessible to all.
       </Card>
-      <Card title="REST APIs">
-        If you need to connect different applications or expose your data to your frontend applications, I can help you
-        by designing and building your REST API using standard guidlines and modern technologies.
+    </CardsContainer>
+    <CardsContainer id="about" title="About me 👨‍💻">
+      <Card title="My education" image={educationImg}>
+        Engineer in Information Systems with a Master's degree from the The University of Science and Technology –
+        Houari Boumediene, Algiers, Algeria.
+      </Card>
+      <Card title="Occupation" image={jobImg}>
+        Currently occupying a software developer position in a governemntal body. My job involves database design,
+        implementation, normalization and migration as well as web development and basic systems administration tasks.
       </Card>
     </CardsContainer>
+
+    <CardsContainer id="contact" title="Contact me 👋">
+      <ContactForm action="https://formsubmit.co/6b22363c6f56b811563331ffbb484b02" />
+    </CardsContainer>
+    <footer class="mb-4 mt-auto text-slate-800 text-base font-semibold text-center">© 2023 Ibrahim.B</footer>
   </SidebarLayout>
 </TitleLayout>
 <style is:global>
@@ -120,11 +133,23 @@ import fullStackImg from "@assets/images/fullstack.png";
     font-size: 17px;
     font-family: ui-sans-serif, system-ui, Helvetica, sans-serif;
     background-color: white;
+    scroll-behavior: smooth;
   }
 
-  @layer {
+  [id]::before {
+    content: "";
+    display: block;
+    height: 50px;
+    margin-top: -50px;
+    visibility: hidden;
+  }
+
+  @layer components {
     section {
       @apply my-24;
+    }
+    .btn-light {
+      @apply py-4 px-6 my-12 text-xl font-bold bg-slate-800 text-slate-300 rounded-lg hover:bg-slate-900 duration-150;
     }
   }
 </style>

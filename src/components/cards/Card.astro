@@ -1,24 +1,21 @@
 ---
+import CardImage from "./CardImage";
+
 interface Props {
   title: string;
   image?: string;
   alt?: string;
 }
-import placeholder from "@assets/images/placeholder.png";
-const {
-  title,
-  image = placeholder,
-  alt = "A card component image probably related to a project or a blog"
-} = Astro.props;
+const { title, image, alt } = Astro.props;
 ---
 
-<div
-  class="flex items-center gap-5 p-5 text-slate-800 bg-white rounded-xl duration-150 hover:shadow-xl hover:scale-102"
->
-  <img class="min-w-72 h-64 rounded-xl object-contain" src={image} alt={alt} />
-  <article class="">
-    <h3 class="text-2xl font-bold">{title} <slot name="badge" /></h3>
-    <p class="my-2 text-lg"><slot /></p>
-    <slot name="stack" />
+<div class="p-5 text-slate-800 bg-white rounded-xl duration-150 hover:shadow-xl hover:scale-102">
+  <article class="flex items-center flex-row gap-6">
+    <CardImage client:only src={image} alt={alt} />
+    <div>
+      <h3 class="text-2xl font-bold">{title} <slot name="badge" /></h3>
+      <p class="my-2 text-lg"><slot /></p>
+      <slot name="stack" />
+    </div>
   </article>
 </div>

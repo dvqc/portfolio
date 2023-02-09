@@ -10,4 +10,4 @@ interface Props {
 const { link, ...rest } = Astro.props;
 ---
 
-<a href={link} target="_blank"><Card {...rest}><slot /></Card></a>
+<a href={link} target="_blank"><Card {...rest}><slot /> <slot name="stack" /></Card></a>
