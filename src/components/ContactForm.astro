@@ -6,14 +6,17 @@ interface Props {
 const { action } = Astro.props;
 ---
 
-<div class="flex">
-  <form target="_blank" action={action} method="POST" class="w-full grid grid-cols-2 px-8 py-4">
-    <div class="col-span-2">
-      <input type="text" name="name" class="form-control" placeholder="Full Name" required />
-      <input type="email" name="email" class="form-control" placeholder="Email Address" required />
-    </div>
-    <textarea class="col-span-2" placeholder="Your Message" class="form-control" name="message" rows="5" required
-    ></textarea>
-    <button type="submit" class="btn-light">Send</button>
+<div class="flex mt-6">
+  <form target="_blank" action={action} method="POST" class="w-full grid grid-cols-2 gap-5 px-8 py-4">
+    <input class="input-light" type="text" name="name" class="form-control" placeholder="Full Name" required />
+    <input class="input-light" type="email" name="email" class="form-control" placeholder="Email Address" required />
+    <textarea
+      class="col-span-2 input-light resize-none"
+      placeholder="Your Message"
+      class="form-control"
+      name="message"
+      rows="5"
+      required></textarea>
+    <button type="submit" class="btn-light w-44">Send ✉️</button>
   </form>
 </div>

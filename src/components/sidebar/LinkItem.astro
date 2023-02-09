@@ -1,10 +1,13 @@
 ---
 interface Props {
-  icon: string;
   link: string;
 }
 
-const { icon, link } = Astro.props;
+const { link } = Astro.props;
 ---
 
-<a class="" href={link}><img class="w-5 h-5 hover:scale-105 duration-100" src={icon} alt="Link icon" /></a>
+<a class="" href={link}>
+  <div class="w-5 h-5 hover:scale-105 duration-100">
+    <slot name="svg" />
+  </div>
+</a>
