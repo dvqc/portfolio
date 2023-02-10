@@ -18,11 +18,13 @@ import educationImg from "@assets/images/education.svg";
 import jobImg from "@assets/images/job.svg";
 import ContactForm from "@components/ContactForm.astro";
 import ModeToggler from "@components/ModeToggler";
+import Topbar from "@components/sidebar/Topbar";
 ---
 
 <TitleLayout title="Ibrahim's Personal Website">
   <SidebarLayout>
-    <div class="pt-4 flex justify-end">
+    <Topbar />
+    <div class="fixed top-4 right-5 z-50">
       <ModeToggler client:load />
     </div>
     <section id="home" class="text-slate-800 dark:text-gray-300">
@@ -68,8 +70,8 @@ import ModeToggler from "@components/ModeToggler";
         </div>
       </LinkCard>
       <LinkCard title="My unsplash" link="https://my-unsplash-umber.vercel.app/" image={myUnsplashImg}>
-        This is an <a class="text-blue-400 hover:underline" href="https://unsplash.com/" target="_blank">Unsplash</a> mini
-        clone, users can browse, add, manage and like images, with the most popular ones ranked first.
+        This is an <a class="text-blue-400 hover:underline" href="https://unsplash.com/" target="_blank">Unsplash</a>
+        mini clone, users can browse, add, manage and like images, with the most popular ones ranked first.
         <div slot="stack">
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-pink-600" text="SCSS" />
@@ -115,8 +117,9 @@ import ModeToggler from "@components/ModeToggler";
         Houari Boumediene, Algiers, Algeria.
       </Card>
       <Card title="Occupation" image={jobImg}>
-        Currently occupying a software development position in a governemntal body. My job involves database design,
-        implementation, normalization and migration as well as web development and basic systems administration tasks.
+        Currently, I am employed as a software developer within a government organization. My responsibilities include
+        database design, implementation, normalization, and migration, as well as web development and performing basic
+        systems administration tasks.
       </Card>
     </CardsContainer>
 
@@ -152,23 +155,29 @@ import ModeToggler from "@components/ModeToggler";
     visibility: hidden;
   }
 
+  @media only screen and (max-width: 768px) {
+    html {
+      font-size: 15px;
+    }
+  }
+
   @layer components {
     body {
-      @apply bg-white dark:bg-gray-700 transition-colors duration-300;
+      @apply bg-white dark:bg-gray-800 transition-colors duration-300;
     }
     section {
       @apply my-24;
     }
     .btn-light {
-      @apply py-4 px-6 my-12 text-xl font-bold bg-gray-800 text-slate-200 rounded-lg hover:bg-gray-900
+      @apply py-4 px-6 my-12 text-xl font-bold bg-gray-900 text-slate-200 rounded-lg hover:shadow-lg 
        duration-150 active:scale-90;
     }
     .input-light {
       @apply py-4 px-4 text-xl font-bold bg-slate-200  text-slate-800 
       rounded-lg  border-2 border-slate-200 focus:border-slate-800  
        focus:duration-150
-       dark:bg-gray-800 dark:text-gray-300 
-       dark:border-gray-800  dark:focus:border-gray-300 transition-colors duration-300;
+       dark:bg-gray-700 dark:text-gray-300 
+       dark:border-gray-700  dark:focus:border-gray-300 transition-colors duration-300;
     }
   }
 </style>

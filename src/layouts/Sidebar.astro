@@ -3,6 +3,8 @@ import Sidebar from "@components/sidebar/Sidebar.astro";
 ---
 
 <Sidebar className={"w-96"} />
-<main class="ml-96 px-44">
-  <slot />
+<main class="md:ml-96 px-10">
+  <div class="max-w-3xl mr-auto ml-auto">
+    <slot />
+  </div>
 </main>

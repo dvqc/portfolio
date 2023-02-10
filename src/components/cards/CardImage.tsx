@@ -12,19 +12,17 @@ const CardImage = ({
   const [isError, setIsError] = useState(false);
 
   return (
-    <>
-      {isLoading && (
-        <div className="min-w-60 max-w-xs h-48 rounded-xl object-fit bg-slate-200 animate-pulse inline-block"></div>
-      )}
+    <div className=" min-w-60 h-52 rounded-xl">
+      {isLoading && <div className="bg-slate-200 animate-pulse"></div>}
       {isError ? (
         <img
           src={"/images/placeholder.png"}
           alt="fallback image"
-          className="object-cover min-w-60 h-48 rounded-xl object-fit"
+          className="object-cover"
         />
       ) : (
         <img
-          className="min-w-60  h-48 rounded-xl object-fit"
+          className="w-full h-full object-cover"
           alt={alt}
           src={src ?? ""}
           onLoad={() => setIsLoading(false)}
@@ -34,7 +32,7 @@ const CardImage = ({
           }}
         />
       )}
-    </>
+    </div>
   );
 };
 

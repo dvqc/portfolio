@@ -12,8 +12,8 @@ const { className = "" } = Astro.props;
 
 <aside
   class={className +
-    " fixed flex flex-col items-center left-0 top-0 h-screen overflow-auto p-5 bg-gray-200 dark:bg-gray-800 " +
-    "transition-colors duration-300"}
+    " fixed -left-full md:left-0 top-0 h-screen flex flex-col items-center  overflow-auto p-5 bg-gray-200 dark:bg-gray-900 " +
+    "transition-all duration-300 z-50"}
 >
   <img class="w-56 h-56 rounded-full m-5 shadow-md" src={portrait} alt="A portrait image of the website owner" />
   <Nav>
