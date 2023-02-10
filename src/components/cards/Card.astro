@@ -5,13 +5,17 @@ interface Props {
   title: string;
   image?: string;
   alt?: string;
+  addHoverEffects?: boolean;
 }
-const { title, image, alt } = Astro.props;
+const { title, image, alt, addHoverEffects = false } = Astro.props;
+
+const hoverEffects = " hover:shadow-xl dark:hover:shadow-2xl hover:scale-102 hover:duration-150";
 ---
 
 <div
-  class={"p-5 text-slate-800 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-xl  hover:shadow-xl " +
-    "dark:hover:shadow-2xl hover:scale-102 hover:duration-150 "}
+  class={`p-5 text-slate-800 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-xl duration-300 ${
+    addHoverEffects ? hoverEffects : ""
+  }`}
 >
   <article class="flex items-center flex-col lg:flex-row gap-6">
     <CardImage client:only src={image} alt={alt} />

@@ -7,7 +7,6 @@ const ModeToggler = () => {
     if (isDark) document.documentElement.classList.add("dark");
     else document.documentElement.classList.remove("dark");
   }, [isDark]);
-  console.log(isDark);
 
   return (
     <div className="flex gap-2  max-w-max px-2 py-1 rounded-2xl bg-gray-300  dark:bg-gray-700">
