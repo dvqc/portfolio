@@ -6,7 +6,7 @@ import Nav from "@components/sidebar/Nav.astro";
 import NavItem from "@components/sidebar/NavItem.astro";
 ---
 
-<Sidebar className={"w-96"} client:load>
+<Sidebar className={"w-64 md:96"} client:load>
   <Nav slot="nav">
     <NavItem text="Home" link="#home" />
     <NavItem text="Projects" link="#projects" />

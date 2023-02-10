@@ -31,7 +31,7 @@ const Sidebar = ({
         transition-all duration-300 z-50`}
       >
         <img
-          className="w-56 h-56 rounded-full m-5 shadow-md"
+          className="md:w-56 md:h-56 w-32 h-32 rounded-full m-5 shadow-md"
           src={portrait}
           alt="A portrait image of the website owner"
         />
