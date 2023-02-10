@@ -1,13 +1,7 @@
 ---
-import TitleLayout from "@layouts/Title.astro";
-import SidebarLayout from "@layouts/Sidebar.astro";
-import CardsContainer from "@components/cards/CardsContainer.astro";
-import Card from "@components/cards/Card.astro";
 import weatherAppImg from "@assets/images/weather-app.png";
 import shoppingifyImg from "@assets/images/shoppingify.png";
 import myUnsplashImg from "@assets/images/my-unsplash.png";
-import Badge from "@components/Badge.astro";
-import LinkCard from "@components/cards/LinkCard.astro";
 import languagesImg from "@assets/images/web_languages.jpg";
 import frameworksImg from "@assets/images/frameworks.jpg";
 import toolsImg from "@assets/images/tools.png";
@@ -16,9 +10,14 @@ import frontendImg from "@assets/images/frontend.svg";
 import staticImg from "@assets/images/static.svg";
 import educationImg from "@assets/images/education.svg";
 import jobImg from "@assets/images/job.svg";
+
+import TitleLayout from "@layouts/Title.astro";
+import SidebarLayout from "@layouts/Sidebar.astro";
 import ContactForm from "@components/ContactForm.astro";
 import ModeToggler from "@components/ModeToggler";
-import Topbar from "@components/sidebar/Topbar";
+import Badge from "@components/Badge.astro";
+import { Topbar } from "@components/sidebar";
+import { Card, CardsContainer, LinkCard } from "@components/cards";
 ---
 
 <TitleLayout title="Ibrahim's Personal Website">
@@ -52,7 +51,7 @@ import Topbar from "@components/sidebar/Topbar";
           href="https://www.weatherapi.com/"
           target="_blank">WeatherAPI</a
         >) and renders weather data based on the user's geolocation.
-        <div slot="stack">
+        <div class="flex justify-start flex-wrap gap-2" slot="stack">
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-pink-600" text="SCSS" />
           <Badge className="bg-cyan-400" text="React" />
@@ -62,7 +61,7 @@ import Topbar from "@components/sidebar/Topbar";
       <LinkCard title="Shoppingify" link="https://shoppingify-dvqc.vercel.app/" image={shoppingifyImg}>
         Shoppingify is a full stack responsive web app that lets users browse or add items and create a shopping list
         that they can take wherever they go.
-        <div slot="stack">
+        <div class="flex justify-start flex-wrap gap-2" slot="stack">
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-cyan-500" text="TailwindCSS" />
           <Badge className="bg-cyan-400" text="React" />
@@ -72,7 +71,7 @@ import Topbar from "@components/sidebar/Topbar";
       <LinkCard title="My unsplash" link="https://my-unsplash-umber.vercel.app/" image={myUnsplashImg}>
         This is an <a class="text-blue-400 hover:underline" href="https://unsplash.com/" target="_blank">Unsplash</a>
         mini clone, users can browse, add, manage and like images, with the most popular ones ranked first.
-        <div slot="stack">
+        <div class="flex justify-start flex-wrap gap-2" slot="stack">
           <Badge className="bg-blue-500" text="TypeScript" />
           <Badge className="bg-pink-600" text="SCSS" />
           <Badge className="bg-cyan-400" text="React" />

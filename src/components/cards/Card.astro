@@ -20,7 +20,7 @@ const hoverEffects = " hover:shadow-xl dark:hover:shadow-2xl hover:scale-102 hov
   <article class="flex items-center flex-col lg:flex-row gap-6">
     <CardImage client:only src={image} alt={alt} />
     <div>
-      <h3 class="text-2xl font-bold">{title} <slot name="badge" /></h3>
+      <h3 class="text-2xl font-bold text-center md:text-left">{title} <slot name="badge" /></h3>
       <p class="my-2 text-lg"><slot /></p>
       <slot name="stack" />
     </div>
